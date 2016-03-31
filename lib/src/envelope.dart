@@ -107,6 +107,7 @@ class Envelope {
 
           buffer.write('--$boundary\n');
           buffer.write('Content-Type: ${_getMimeType(attachment.file.path)}; name="$filename"\n');
+          buffer.write('Content-ID: <$filename>\n');
           buffer.write('Content-Transfer-Encoding: base64\n');
           buffer.write('Content-Disposition: attachment; filename="$filename"\n\n');
           buffer.write('$contents\n\n');
